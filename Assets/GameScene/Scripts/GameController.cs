@@ -423,4 +423,15 @@ public class GameController : MonoBehaviour {
 
 		System.IO.File.WriteAllBytes(persistentPath + "/" + subPath, fileWWW.bytes);
 	}
+
+	void OnApplicationFocus (bool isFocus) {  
+		if (isFocus) {  
+			if (mRtcEngine!=null) {
+				mRtcEngine.EnableAudio ();
+			}
+			Debug.Log ("agora  isFocus");             
+		} else {  
+			Debug.Log ("agora   unfocus");
+		}  
+	}
 }
