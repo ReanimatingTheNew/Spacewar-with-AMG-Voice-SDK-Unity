@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour {
 	private Rect availablePeerRect = new Rect(-2.5f,3.5f,5f,4.7f);
 	private MessageText currentMessageText;
 
-	private IRtcEngineForGaming mRtcEngine = null;
+	private IRtcEngine mRtcEngine = null;
 	private bool isInAgoraAudio = false;
 	private bool useAudioMixing = true;
 	private AudioSource bgmAudioSource;
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void LoadAgoraKit () {
-		mRtcEngine = IRtcEngineForGaming.GetEngine (ApplicationModal.AppId);
+		mRtcEngine = IRtcEngine.GetEngine (ApplicationModal.AppId);
 
 		mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG);
 		string rtcLogFile = LocalLogFilePath ();
